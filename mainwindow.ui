@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Home - Snake Device Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="imgresources.qrc">
+    <normaloff>:/icons/login/imgs/favicon.ico</normaloff>:/icons/login/imgs/favicon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>600</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Inicio</string>
+    </property>
+    <addaction name="actionGrabar_Dongle"/>
+    <addaction name="actionLeer_Dongle"/>
+    <addaction name="actionGrabar_Juego"/>
+    <addaction name="separator"/>
+    <addaction name="actionGrabar_TinkerBoard"/>
+    <addaction name="actionLeer_TinkerBoard"/>
+    <addaction name="actionGrabar_Juego_Tinker"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionContacto"/>
+   </widget>
+   <widget class="QMenu" name="menuConfiguracion">
+    <property name="title">
+     <string>Configuracion</string>
+    </property>
+    <addaction name="actionSeleccionar_Impresora"/>
+   </widget>
+   <widget class="QMenu" name="menuImprimir">
+    <property name="title">
+     <string>Imprimir</string>
+    </property>
+    <addaction name="actionEtiqueta_de_kit"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuImprimir"/>
+   <addaction name="menuConfiguracion"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea</set>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSalir"/>
+   <addaction name="separator"/>
+   <addaction name="actionGrabar_Dongle"/>
+   <addaction name="actionLeer_Dongle"/>
+   <addaction name="actionGrabar_Juego"/>
+   <addaction name="separator"/>
+   <addaction name="actionGrabar_TinkerBoard"/>
+   <addaction name="actionLeer_TinkerBoard"/>
+   <addaction name="actionGrabar_Juego_Tinker"/>
+  </widget>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/exit.png</normaloff>:/icons/mainwindow/imgs/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="statusTip">
+    <string>Salir de la aplicacion</string>
+   </property>
+  </action>
+  <action name="actionGrabar_Dongle">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_Import_131864.png</normaloff>:/icons/mainwindow/imgs/if_Import_131864.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grabar Dongle</string>
+   </property>
+   <property name="statusTip">
+    <string>Graba la seguridad del juego en Dongle</string>
+   </property>
+  </action>
+  <action name="actionLeer_Dongle">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_Search_text_131785.png</normaloff>:/icons/mainwindow/imgs/if_Search_text_131785.png</iconset>
+   </property>
+   <property name="text">
+    <string>Leer Dongle</string>
+   </property>
+   <property name="statusTip">
+    <string>Leer los valores de Dongle conectada</string>
+   </property>
+  </action>
+  <action name="actionGrabar_Juego">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_Save_image_131740.png</normaloff>:/icons/mainwindow/imgs/if_Save_image_131740.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grabar Juego para Dongle</string>
+   </property>
+   <property name="statusTip">
+    <string>Graba Imagen de juego en unidad USB para la plataforma Dongle</string>
+   </property>
+  </action>
+  <action name="actionContacto">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_Info_131908.png</normaloff>:/icons/mainwindow/imgs/if_Info_131908.png</iconset>
+   </property>
+   <property name="text">
+    <string>Contacto</string>
+   </property>
+  </action>
+  <action name="actionSeleccionar_Impresora">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_Print_131803.png</normaloff>:/icons/mainwindow/imgs/if_Print_131803.png</iconset>
+   </property>
+   <property name="text">
+    <string>Seleccionar Impresora</string>
+   </property>
+   <property name="statusTip">
+    <string>Configura la impresora de etiquetas</string>
+   </property>
+  </action>
+  <action name="actionEtiqueta_de_kit">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/if_box_49364.png</normaloff>:/icons/mainwindow/imgs/if_box_49364.png</iconset>
+   </property>
+   <property name="text">
+    <string>Etiqueta de kit</string>
+   </property>
+   <property name="statusTip">
+    <string>Imprimir etiqueta para el kit de dongle y juego</string>
+   </property>
+  </action>
+  <action name="actionGrabar_TinkerBoard">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/tinkerwrite8.png</normaloff>:/icons/mainwindow/imgs/tinkerwrite8.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grabar TinkerBoard</string>
+   </property>
+   <property name="toolTip">
+    <string>Grabar TinkerBoard</string>
+   </property>
+   <property name="statusTip">
+    <string>Grabar datos de seguridad en la plataforma TinkerBoard</string>
+   </property>
+  </action>
+  <action name="actionLeer_TinkerBoard">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/tinkerread3.png</normaloff>:/icons/mainwindow/imgs/tinkerread3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Leer TinkerBoard</string>
+   </property>
+   <property name="statusTip">
+    <string>Leer Valores Almacenados en TinkerBoard</string>
+   </property>
+  </action>
+  <action name="actionGrabar_Juego_Tinker">
+   <property name="icon">
+    <iconset resource="imgresources.qrc">
+     <normaloff>:/icons/mainwindow/imgs/tinkergame13.png</normaloff>:/icons/mainwindow/imgs/tinkergame13.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grabar Juego para TinkerBoard</string>
+   </property>
+   <property name="toolTip">
+    <string>Grabar juego para TinkerBoard</string>
+   </property>
+   <property name="statusTip">
+    <string>Graba Imagen de juego en microSD para la plataforma TinkerBoard</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="imgresources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

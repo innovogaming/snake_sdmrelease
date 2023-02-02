@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/icons/login">
+        <file>imgs/favicon.ico</file>
+    </qresource>
+    <qresource prefix="/icons/mainwindow">
+        <file>imgs/copy.png</file>
+        <file>imgs/new.png</file>
+        <file>imgs/open.png</file>
+        <file>imgs/paste.png</file>
+        <file>imgs/print.png</file>
+        <file>imgs/exit.png</file>
+        <file>imgs/if_Download_131838.png</file>
+        <file>imgs/if_Bitmap_editor_131739.png</file>
+        <file>imgs/if_Help_book_131870.png</file>
+        <file>imgs/if_Import_131864.png</file>
+        <file>imgs/if_List_131880.png</file>
+        <file>imgs/if_Print_131803.png</file>
+        <file>imgs/if_Save_image_131740.png</file>
+        <file>imgs/if_Search_text_131785.png</file>
+        <file>imgs/if_Help_131716.png</file>
+        <file>imgs/if_Info_131908.png</file>
+        <file>imgs/if_box_49364.png</file>
+        <file>imgs/tinkerread3.png</file>
+        <file>imgs/tinkerwrite8.png</file>
+        <file>imgs/tinkergame13.png</file>
+    </qresource>
+    <qresource prefix="/pixmap/login">
+        <file>innovoSmall.png</file>
+        <file>LogoSnakeSmall.png</file>
+        <file>bg10.png</file>
+    </qresource>
+</RCC>
