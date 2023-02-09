@@ -40,7 +40,23 @@ login::login(QWidget *parent) :
     qDebug("System Time is: %02d:%02d:%02d",t_now->tm_hour, t_now->tm_min, t_now->tm_sec);
 
     //string txtVersion = "Version " + to_string( t_now->tm_year+1900 ) + "." + to_string(  t_now->tm_mon+1 ) + "." + to_string( t_now->tm_mday );
-    string txtVersion = "Version 2021.07.14";
+    /*
+    V: 2021.07.14 - last stable version
+
+    V: 2023.02.03 - make iso tinker, implemented progress bar, and select version when load page
+
+    V: 2023.02.03 -
+        -- install kpartx
+        -- dconfi-edit
+        --- sudo apt-get install dconf-editor
+                Launch the dconf Editor by typing dconf-editor in the terminal.
+                Navigate to org > gnome > desktop > media-handling.
+                Uncheck the automount option.
+                Close the dconf Editor.
+        --- apt-get install libcryptsetup-dev
+    */
+
+    string txtVersion = "Version 2023.02.03";
 
     ui->label_versionSDM->setText(txtVersion.c_str());
 

@@ -8,6 +8,7 @@
 
 #include "conexiones.h"
 #include "printer.h"
+#include "crypto.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,8 +17,13 @@
 #include <iostream>
 #include <cstring>
 
+#include <sys/stat.h>
+#include <sys/mount.h>
+
+namespace Crypto = Tinker_Crypto;
+
 namespace Ui {
-class WriteGameTinkerForm;
+    class WriteGameTinkerForm;
 }
 
 class WriteGameTinkerForm : public QWidget
@@ -40,13 +46,15 @@ public:
 
     int         getGameId(QString GameName);
     int         getIdGameVer(QString GameName);
+    QStringList     getPassContent(int idGameVer);
 
     QString GetStdoutFromCommand(QString cmd, double sizeCmd = 0);
 
     void        setDrives();
     QString     getDrives();
 
-    QString     SetGamePath(int, QString);
+    QStringList     SetGamePath(int, QString);
+
     int         MakeGame(QString, QString);
 
     void        makeIsoDisabled(QString);
@@ -58,6 +66,15 @@ public:
     void        ProgressBarShow();
     void        ProgressBarChange(int i);
     void        ProgressBarReset();
+
+private:
+
+    int         CreateFolder(const char* path);
+    int         MountFolder(const char* source,const char* target);
+    int         UmountFolder(const char* partition);
+    int         IfMountedFolder(const char* partition);
+    int         CleanFirst();
+    int         SyncGame(QString, QStringList);
 
 public slots:
     void slot_gamenameChange();
@@ -74,9 +91,9 @@ private:
     Ui::WriteGameTinkerForm *ui;
     QString GameName;
     QString GameVer;
-    QString GamePath;
-    QString BasePath;
-    QString ImagePath;
+    //QString GamePath;
+    //QString BasePath;
+    //QString ImagePath;
     int IdGame;
     //double sizeDrive;
     QString DriveSelected;
@@ -86,6 +103,9 @@ private:
     QString GameVersionToPrint;
     QString GameNameToPrint;
     QString DayMonthYearToPrint;
+
+    QString matrizDrive = "/image/";
+    QString matrizImage = "/image/img_lab.img";
 };
 
 #endif // WRITEGAMETINKERFORM_H

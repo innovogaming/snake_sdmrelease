@@ -57,7 +57,8 @@ SOURCES += \
     tinkerlibs/fram.cpp \
     tinkerlibs/storage.cpp \
     writegametinkerform.cpp \
-    tinkerlibs/rtc.cpp
+    tinkerlibs/rtc.cpp \
+    tinkerlibs/crypto.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -84,7 +85,8 @@ HEADERS += \
     tinkerlibs/storage.h \
     tinkerinterface.h \
     writegametinkerform.h \
-    tinkerlibs/rtc.h
+    tinkerlibs/rtc.h \
+    tinkerlibs/crypto.h
 
 FORMS += \
         mainwindow.ui \
@@ -116,6 +118,6 @@ LIBS += -lcups
 LIBS += -L/usr/local/lib -lbuspirate
 #LIBS += -L/home/vmuser/sdm/cryptoauthlib/bin -lcryptoauthlib
 LIBS += /home/vmuser/sdm/cryptoauthlib/bin/cryptoauthlib.a
-
+LIBS += -lcryptsetup
 
 
