@@ -330,6 +330,29 @@ int WriteGameTinkerForm::SyncGame(QString gamepath_, QStringList gpassContent_){
         }
 
 
+        QString contentImage = "/jabulani/images/content_03-08-2023.img";
+        QString losetupAvaiable2 = GetStdoutFromCommand("losetup -f");
+        QStringList losetup2_ = losetupAvaiable2.split('/');
+        qDebug() << losetup2_.size() << ", " << losetup2_.at(2);
+        GetStdoutFromCommand("losetup -v " + losetupAvaiable2 + " " + contentImage);
+        GetStdoutFromCommand("kpartx -av " + losetupAvaiable2);
+        sleep(1);
+        QString tmpBuffer2 = "/dev/mapper/" + losetup2_.at(2) + "p1";
+        //std::string device_str = tmpBuffer.toStdString();
+        QString tmpPass2 = gpassContent_.at(0);
+        //openCryptoDrive(const char *path, char* passkey, int passSize, int flag, const char *device_name);
+        int exitCrypto2 = crypto.openCryptoDrive(tmpBuffer2.toUtf8().constData(), tmpPass2.toLatin1().data(),tmpPass2.size(), 0, "content");
+        qDebug() << "Exit Crypto 2: " << exitCrypto2;
+        if( exitCrypto2 == 0)
+        {
+            GetStdoutFromCommand("mkfs.ext4 /dev/mapper/content");
+
+            CreateFolder("/image/content");
+
+            MountFolder("/dev/mapper/content","/image/content");
+
+        }
+
 
         //GetStdoutFromCommand("/image/Tools/crypt " + gpassContent_.at(1) + gpassContent_.at(2));
         //GetStdoutFromCommand("mkdir -v " + matrizDrive + "content");
