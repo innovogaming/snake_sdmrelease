@@ -16,6 +16,7 @@
 #include "printkitdialog.h"
 #include "writetinkerform.h"
 #include "readtinkerform.h"
+#include "writepipicoform.h"
 
 namespace Ui {
 class MainWindow;
@@ -55,6 +56,8 @@ private slots:
     void on_actionLeer_TinkerBoard_triggered();
 
     void on_actionGrabar_Juego_Tinker_triggered();
+
+    void on_actionGrabar_Firmware_PiPico_triggered();
 
 private:
     Ui::MainWindow *ui;

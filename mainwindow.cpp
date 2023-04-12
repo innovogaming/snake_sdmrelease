@@ -121,6 +121,17 @@ void MainWindow::on_actionGrabar_Juego_Tinker_triggered()
     }
 }
 
+void MainWindow::on_actionGrabar_Firmware_PiPico_triggered()
+{
+    if(getSubWindowActive()){
+        ui->mdiArea->closeAllSubWindows();
+        loadSubWIndow(new WritePiPicoForm(this));
+    }else{
+        loadSubWIndow(new WritePiPicoForm(this));
+    }
+}
+
+
 /*
  * ****************************************************************************
  * ****************************************************************************
@@ -155,5 +166,3 @@ void MainWindow::addDatabaseServerText(){
     label->setText("Conectado al servidor: "+ servertext);
     ui->statusBar->addPermanentWidget(label);
 }
-
-

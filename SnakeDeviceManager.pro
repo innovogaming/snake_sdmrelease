@@ -58,7 +58,8 @@ SOURCES += \
     tinkerlibs/storage.cpp \
     writegametinkerform.cpp \
     tinkerlibs/rtc.cpp \
-    tinkerlibs/crypto.cpp
+    tinkerlibs/crypto.cpp \
+    writepipicoform.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -86,7 +87,8 @@ HEADERS += \
     tinkerinterface.h \
     writegametinkerform.h \
     tinkerlibs/rtc.h \
-    tinkerlibs/crypto.h
+    tinkerlibs/crypto.h \
+    writepipicoform.h
 
 FORMS += \
         mainwindow.ui \
@@ -101,7 +103,8 @@ FORMS += \
     printkitdialog.ui \
     writetinkerform.ui \
     readtinkerform.ui \
-    writegametinkerform.ui
+    writegametinkerform.ui \
+    writepipicoform.ui
 
 RESOURCES += \
     imgresources.qrc

@@ -5,6 +5,34 @@ Printer::Printer()
 
 }
 
+bool Printer::WriteRPI_RP2(QString appname, QString appver, QString content){
+    bool retval;
+    std::string StdStringPs;
+    QString PsString;
+    QString LogoString = AddLogo();
+    PsString = "";
+    PsString.append("%!PS-Adobe-3.0").append("\n");
+    PsString.append("%cupsJobTicket: media=custom_17.02x53.85mm_17.02x53.85mm sides=one-sided").append("\n");
+    PsString.append("/Times-Roman findfont 12 scalefont setfont").append("\n");
+    PsString.append("20 10 moveto 90 rotate ").append("(").append(appname).append("_").append(appver).append(") show 90 neg rotate").append("\n");
+    PsString.append("35 10 moveto 90 rotate ").append("(").append(content).append(") show 90 neg rotate").append("\n");
+    PsString.append(" ").append("\n");
+    PsString.append("showpage").append("\n");
+
+    StdStringPs = PsString.toStdString();
+    std::ofstream psfile ("/home/vmuser/sdmlabel.ps", std::ios::trunc);
+    if (psfile.is_open()){
+        psfile << StdStringPs;
+        psfile.close();
+        retval = true;
+    }else{
+        qDebug() << "Unable to open file";
+        retval = false;
+    }
+
+    return retval;
+}
+
 /**
  * @brief Printer::WritePs
  * @param gamver

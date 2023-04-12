@@ -23,6 +23,7 @@
         <file>imgs/tinkerread3.png</file>
         <file>imgs/tinkerwrite8.png</file>
         <file>imgs/tinkergame13.png</file>
+        <file>imgs/icon_raspberry.png</file>
     </qresource>
     <qresource prefix="/pixmap/login">
         <file>innovoSmall.png</file>

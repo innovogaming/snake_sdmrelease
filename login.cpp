@@ -54,9 +54,13 @@ login::login(QWidget *parent) :
                 Uncheck the automount option.
                 Close the dconf Editor.
         --- apt-get install libcryptsetup-dev
+
+     V: 2023.04.14 -
+        -- add button and methods to flash a RPI-RP2
+
     */
 
-    string txtVersion = "Version 2023.02.03";
+    string txtVersion = "Version 2023.04.14";
 
     ui->label_versionSDM->setText(txtVersion.c_str());
 

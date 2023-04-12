@@ -13,6 +13,7 @@ class Printer
 {
 public:
     Printer();
+    bool    WriteRPI_RP2(QString appname, QString appver, QString content);
     bool    WritePs(QString gamver, QString gameid, QString machid, QString date);
     bool    WritePsGame(QString _gamename, QString _gamever, QString _date);
     bool    WritePsKit(QString _gamename, QString _gamever, QString _date);
