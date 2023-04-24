@@ -36,8 +36,6 @@ public:
     QStringList getAppVerList(QString AppName);
     QStringList SetAppPath(int AppId, QString AppVer );
     int         getAppId(QString appname);
-    int getDeviceID(int ID);
-    int write();
 
     conexiones  conn;
 signals:
@@ -52,10 +50,6 @@ private slots:
 
 private:
     Ui::WritePiPicoForm *ui;
-    void            ProgressBarHide();
-    void            ProgressBarShow();
-    void            ProgressBarChange(int i);
-    void            ProgressBarReset();
     std::string     GetStdoutFromCommand(std::string cmd);
 
     std::string Id;

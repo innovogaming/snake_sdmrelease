@@ -262,13 +262,13 @@
      <normaloff>:/icons/mainwindow/imgs/icon_raspberry.png</normaloff>:/icons/mainwindow/imgs/icon_raspberry.png</iconset>
    </property>
    <property name="text">
-    <string>Grabar Firmware para PiPico</string>
+    <string>Grabar Firmware Board RPI-RP2</string>
    </property>
    <property name="toolTip">
     <string>Grabar firmware para PiPico</string>
    </property>
    <property name="statusTip">
-    <string>Grabar Firmware para placa plataforma +Puntos</string>
+    <string>Flash Firmware Board RPI-RP2 </string>
    </property>
   </action>
  </widget>

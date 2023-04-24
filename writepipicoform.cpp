@@ -229,7 +229,7 @@ QStringList WritePiPicoForm::SetAppPath(int AppId, QString AppVer)
         }
         else
         {
-            QMessageBox::warning(this, "Error", "El campo de Nombre o Version de Juego es vacio");
+            QMessageBox::warning(this, "Error", "El campo de Nombre o Version de App es vacio");
         }
 
     }
@@ -257,7 +257,7 @@ void WritePiPicoForm::on_Grabar_Button_clicked()
     AppId = getAppId(AppName);
     qDebug() << "App Id: " << AppId;
     //ui->description_textEdit->clear();
-    ui->description_textEdit->setText("\nPreparing to record the RPi Pico");
+    ui->description_textEdit->setText("\nPreparando para grabar RPI-RP2");
     AppPath = SetAppPath(AppId, AppVer);
     //qDebug() << "App Path: " << AppPath;
     //qDebug() << "AppName: " << AppName;
@@ -286,14 +286,10 @@ void WritePiPicoForm::on_Grabar_Button_clicked()
         qDebug() << "Command: " << command.c_str();
         std::string result = GetStdoutFromCommand(command);
         qDebug() << "result: " << result.c_str();
-        //std::string command2("dmesg | tail -4");
 
         tmp = "umount /media/" + USER + "/RPI-RP2";
         qDebug() << "command: " << tmp.c_str();
         GetStdoutFromCommand(tmp);
-
-        //finalizado el flasheo de la RPI-RP2
-        ui->description_textEdit->setText("Flash Succeed");
 
         command = "dmesg | tail -4";
         std::string delimiter("SerialNumber: ");
@@ -312,7 +308,7 @@ void WritePiPicoForm::on_Grabar_Button_clicked()
         qDebug() << "content: " << content;
         //ui->description_textEdit->clear();
         //ui->description_textEdit->setAlignment(Qt::AlignHCenter);
-        ui->description_textEdit->setText(content);
+        ui->description_textEdit->setText("\n" + content);
 
         std::string tmp = "rmdir /media/" + USER + "/RPI-RP2";
         GetStdoutFromCommand(tmp);
@@ -330,7 +326,8 @@ void WritePiPicoForm::on_Grabar_Button_clicked()
     }
     else
     {
-        QMessageBox::warning(this, "Message", "Connect RPI PICO in BOOT mode to flash it");
+        //QMessageBox::warning(this, "Message", "Connect RPI PICO in BOOT mode to flash it");
+        QMessageBox::warning(this, "Atencion!", "Conecte RPI-RP2 en modo BOOT para grabar");
     }
 
 }
@@ -414,30 +411,6 @@ void WritePiPicoForm::slot_versionChange(){
     QApplication::setOverrideCursor(Qt::WaitCursor);
     setDescription();
     QApplication::restoreOverrideCursor();
-}
-
-int WritePiPicoForm::getDeviceID(int ID)
-{
-
-}
-
-void WritePiPicoForm::ProgressBarHide()
-{
-   // ui->progressBar->hide();
-}
-
-void WritePiPicoForm::ProgressBarShow()
-{
-    //ui->progressBar->show();
-}
-
-void WritePiPicoForm::ProgressBarChange(int i)
-{
-   // ui->progressBar->setValue(i);
-}
-
-void WritePiPicoForm::ProgressBarReset(){
-    //ui->progressBar->reset();
 }
 
 /*********************************************************************************** */
